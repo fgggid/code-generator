@@ -347,7 +347,7 @@ func Run(g *Generator) {
 		}
 
 		for _, s := range files {
-			if strings.HasSuffix(s, "_test.go") {
+			if strings.HasSuffix(s, "_test.go") || strings.HasSuffix(s, "/types.go") {
 				continue
 			}
 			if err := RewriteTypesWithProtobufStructTags(s, p.StructTags); err != nil {
